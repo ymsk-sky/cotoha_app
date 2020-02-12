@@ -8,8 +8,27 @@ BASE_URL = 'https://api.ce-cotoha.com/api/dev/'
 
 def main():
     client_id, client_secret = get_client_info()
-    print(client_id)
-    print(client_secret)
+    access_token = auth(client_id=client_id,
+                        client_secret=client_secret)
+
+
+def auth(client_id, client_secret):
+    token_url = 'https://api.ce-cotoha.com/v1/oauth/accesstokens'
+    headers = {
+        'Content-Type': 'application/json',
+        'charset': 'UTF-8'
+    }
+    data = {
+        'grantType': 'client_credentials',
+        'clientId': client_id,
+        'clientSecret': client_secret
+    }
+
+    r = requests.post(token_url,
+                      headers=headers,
+                      data=json.dumps(data))
+
+    return r.json()['access_token']
 
 
 def get_client_info():
