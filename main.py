@@ -11,6 +11,53 @@ def main():
     access_token = auth(client_id=client_id,
                         client_secret=client_secret)
 
+    document = """
+               """
+    sent_len = 1
+    result = call_api_summary(access_token=access_token,
+                              document=document,
+                              sent_len=sent_len)
+    print(result)
+
+def call_api_user_attribute(access_token):
+    pass
+
+
+def call_api_summary(access_token, document, sent_len):
+    """要約(β)
+    文単位で重要度を算出しスコアを付与し要約文数に応じて重要文を返す
+
+    params
+    ----
+    access_token : str
+        access token
+    document : str
+        文章
+    sent_len : int
+        重要文の文数
+
+    returns
+    ----
+    json_data : json
+    """
+
+    headers = {
+        'Content-Type': 'application/json',
+        'charset': 'UTF-8',
+        'Authorization': 'Bearer {0}'.format(access_token)
+    }
+    data = {
+        'document': document,
+        'sent_len': sent_len
+    }
+
+    r = requests.post(BASE_URL + 'nlp/bete/summary',
+                      headers=headers,
+                      data=json.dumps(data))
+    json_data = r.json()
+
+    return json_data
+
 
 def auth(client_id, client_secret):
     """アクセストークンを取得する. 24時間有効らしい（未検証）
