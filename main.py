@@ -31,15 +31,50 @@ def main():
                あっあんああっああんあアン様ぁあ！！シ、シエスター！！アンリエッタぁああああああ！！！タバサｧぁあああ！！
                ううっうぅうう！！俺の想いよルイズへ届け！！ハルケギニアのルイズへ届け！
                """.replace(' ', '').replace('！', '。')
-    sent_len = 3
-    result = call_api_summary(access_token=access_token,
-                              document=document,
-                              sent_len=sent_len)
-    print(result['result'])
+    # sent_len = 3
+    # result = call_api_summary(access_token=access_token,
+    #                           document=document,
+    #                           sent_len=sent_len)
+
+    result = call_api_user_attribute(access_token=access_token,
+                                     document=document)
+    print(result)
 
 
-def call_api_user_attribute(access_token):
-    pass
+def call_api_user_attribute(access_token, document, type='default'):
+    """ユーザ属性推定(β)
+    文章から年代、性別、趣味、職業などの人物に関する属性を推定し返す
+
+    params
+    ----
+    access_token : str
+        access token
+    document : str / array(str)
+        文章
+    type : str
+        default(通常文) or kuzure(SNSなどの崩れた文)
+
+    returns
+    ----
+    json_data : json
+    """
+
+    headers = {
+        'Content-Type': 'application/json',
+        'charset': 'UTF-8',
+        'Authorization': 'Bearer {0}'.format(access_token)
+    }
+    data = {
+        'document': document,
+        'type': type
+    }
+
+    r = requests.post(BASE_URL + 'nlp/beta/user_attribute',
+                      headers=headers,
+                      data=json.dumps(data))
+    json_data = r.json()
+
+    return json_data
 
 
 def call_api_summary(access_token, document, sent_len):
