@@ -13,6 +13,20 @@ def main():
 
 
 def auth(client_id, client_secret):
+    """アクセストークンを取得する. 24時間有効らしい（未検証）
+    params
+    ----
+    client_id : str
+        Client ID
+    client_secret : str
+        Client secret
+
+    returns
+    ----
+    access_token
+        access token
+    """
+
     token_url = 'https://api.ce-cotoha.com/v1/oauth/accesstokens'
     headers = {
         'Content-Type': 'application/json',
@@ -27,8 +41,9 @@ def auth(client_id, client_secret):
     r = requests.post(token_url,
                       headers=headers,
                       data=json.dumps(data))
+    access_token = r.json()['access_token']
 
-    return r.json()['access_token']
+    return access_token
 
 
 def get_client_info():
