@@ -12,6 +12,8 @@ def main():
                         client_secret=client_secret)
 
     sentences = ['どこ見て運転してんだよって言えてる時点で無事でよかった。そうだろ？無事であることが何より大切なんだ。',
+                 '2回もぶつかるってことは俺が車道側に立っていたのかもしれない。もう誰かのせいにするのはやめにしよう。',
+                 'いやブーンじゃなくてスーンの車がもう街中に溢れてる。',
                  'いや知らねーんだったら教えてあげよう。そうだろ？知識は水だ。独占してはいけない。',
                  'いや右だっつってんのに何で3回も左に曲がると右になってる。すごいよ運転手さん。',
                  'いや俺がナビしてた時間返せよって言って実際に時間が返ってきたよーって人。いないだろ？できないことを求めるのもやめにしよう。',
@@ -24,7 +26,7 @@ def main():
                  '急に正面が変わったのか？',
                  'いや戻り方は人それぞれだ。',
                  'いやいい加減なことなんてない。',
-                 'しょーもねぇボケやってんじゃねえよって言ってる俺もしょうもない人間だ。']
+                 'しょうもねぇボケやってんじゃねえよって言ってる俺もしょうもない人間だ。']
 
     responses = [call_api_sentiment(access_token=access_token, sentence=s) for s in sentences]
 
@@ -34,7 +36,7 @@ def main():
         score = result['score']  # スコア
 
         print(result)
-        print(sentiment, score)
+        # print(sentiment, score)
 
 
 def call_api_sentiment(access_token, sentence):

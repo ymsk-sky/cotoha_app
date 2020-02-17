@@ -1,3 +1,147 @@
+# 感情分析(pekopa.py)
+
+{
+  'sentiment': 'Positive',
+  'score': 0.3291568300845293,
+  'emotional_phrase': [
+    {
+      'form': '何より大切なんだ',
+      'emotion': 'P'
+    },
+    {
+      'form': '無事でよかった',
+      'emotion': 'P'
+    },
+    {
+      'form': '無事である',
+      'emotion': 'PN'
+    }
+  ]
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.4877043692245398,
+  'emotional_phrase': []
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.3227113315284644,
+  'emotional_phrase': []
+}
+
+{
+  'sentiment': 'Negative',
+  'score': 0.680708725217561,
+  'emotional_phrase': [
+    {
+      'form': '独占して',
+      'emotion': 'PN'
+    },
+    {
+      'form': 'いけない',
+      'emotion': 'N'
+    }
+  ]
+}
+
+{
+  'sentiment': 'Positive',
+  'score': 0.5050907115552886,
+  'emotional_phrase': [
+    {
+      'form': 'すごいよ',
+      'emotion': 'PN'
+    }
+  ]
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.5276931224595394,
+  'emotional_phrase': []
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.4781901493665856,
+  'emotional_phrase': []
+}
+
+{
+  'sentiment': 'Positive',
+  'score': 0.5268584277127111,
+  'emotional_phrase': [
+    {
+      'form': 'いい',
+      'emotion': 'P'
+    }
+  ]
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.42357806108746776,
+  'emotional_phrase': []
+}
+
+{
+  'sentiment': 'Positive',
+  'score': 0.08520264962864471,
+  'emotional_phrase': [
+    {
+      'form': '欲しかった',
+      'emotion': 'P'
+    }
+  ]
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.6764991919227035,
+  'emotional_phrase': []
+}
+
+{
+  'sentiment': 'Negative',
+  'score': 0.7218906215503316,
+  'emotional_phrase': [
+    {
+      'form': 'うるさい',
+      'emotion': 'N'
+    }
+  ]
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.6512791327897911,
+  'emotional_phrase': []
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.3920875786172232,
+  'emotional_phrase': []
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.27053428341491215,
+  'emotional_phrase': []
+}
+
+{
+  'sentiment': 'Neutral',
+  'score': 0.3872447784325785,
+  'emotional_phrase': []
+}
+
+
+
+# 音声認識誤り検知(pekopa2.py)
+
 {'score': 0.9401014505923543, 'candidates': [{'begin_pos': 2, 'end_pos': 3, 'form': 'た', 'detect_score': 0.9401014505923543, 'correction': [{'form': 'タ', 'correct_score': 0.7452447146065118}, {'form': 'たー', 'correct_score': 0.7415830200199872}, {'form': '田', 'correct_score': 0.724969092025156}, {'form': '他', 'correct_score': 0.7204306088480986}, {'form': '它', 'correct_score': 0.7201758199427789}]}]}
 
 {'score': 0.9999972712164384, 'candidates': [{'begin_pos': 0, 'end_pos': 3, 'form': 'フォレ', 'detect_score': 0.9999972712164384, 'correction': [{'form': '俺', 'correct_score': 0.7724741276716153}, {'form': 'オレ', 'correct_score': 0.7506440105547372}, {'form': 'おれ', 'correct_score': 0.7506226608701536}, {'form': 'フォロー', 'correct_score': 0.7358928889672983}, {'form': 'フォーレ', 'correct_score': 0.7047665335279172}]}]}
